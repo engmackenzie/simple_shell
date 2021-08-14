@@ -6,13 +6,13 @@ This project, `simple_shell`, is a custom implementation of a simple UNIX shell 
 
 ## Table of Contents
 * [About](#About)
-* [File Descriptions](File Descriptions)
+* [File Descriptions](File-Descriptions)
 * [Requirements](#Requirements)
-* [More Info & Examples](#More Info & Examples)
+* [More Info & Examples](#More-Info-&-Examples)
 	* [Installation](#Installation)
 	* [Examples](#Examples)
-* [Mandatory Tasks](#Mandatory Tasks)
-* [Advanced Tasks](Advanced Tasks)
+* [Mandatory Tasks](#Mandatory-Tasks)
+* [Advanced Tasks](Advanced-Tasks)
 * [Bugs](#Bugs)
 * [Authors](Authors)
 * [License](#License)
