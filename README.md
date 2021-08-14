@@ -6,13 +6,13 @@ This project, `simple_shell`, is a custom implementation of a simple UNIX shell 
 
 ## Table of Contents
 * [About](#About)
-* [File Descriptions](File-Descriptions)
+* [File Descriptions](#File-Descriptions)
 * [Requirements](#Requirements)
-* [More Info & Examples](#More-Info-&-Examples)
+* [More Info and Examples](#More-Info-and-Examples)
 	* [Installation](#Installation)
 	* [Examples](#Examples)
 * [Mandatory Tasks](#Mandatory-Tasks)
-* [Advanced Tasks](Advanced-Tasks)
+* [Advanced Tasks](#Advanced-Tasks)
 * [Bugs](#Bugs)
 * [Authors](Authors)
 * [License](#License)
@@ -29,7 +29,7 @@ This project, `simple_shell`, is a custom implementation of a simple UNIX shell 
  - Betty coding style is followed.
  - The simple shell has no known memory leaks
 
-## More Info & Examples
+## More Info and Examples
 ### Installation
 Designed to run on `Ubuntu 20.04 LTS`, the simple_shell can be installed as follows:
  * Clone the current repository with the command: ```git clone "https://github.com/stephenmakenziwaweru/simple_shell.git"```
