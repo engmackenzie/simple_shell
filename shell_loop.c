@@ -10,37 +10,36 @@ void sh_loop(void)
 	char **args;
 	int state;
 
-	do
-	{
+	do {
 		printf("$ ");
 		line = sh_readline();
 		args = sh_parseline(line);
 		state = sh_execute(args);
 		free(line);
 		free(args);
-	}while (state);
+	} while (state);
 }
 /**
- * sh_realine - function read liens the shell arguments
+ * sh_readline - function read liens the shell arguments
  *
  * Return: pointer to the arguments entered
  */
 char *sh_readline(void)
 {
 	char *line = NULL;
-	size_t n= 0;
+	size_t n = 0;
 
 	if (getline(&line, &n, stdin) == -1)
 		exit(EXIT_SUCCESS);
 	return (line);
 }
+#define DELIM " \t\r\n\a"
 /**
  * sh_parseline - fuction eliminates spaces and delimeters in arguments
  * @line: argument pointer
  *
  * Return: Pointer to array of arguments
  */
-#define DELIM " \t\r\n\a"
 char **sh_parseline(char *line)
 {
 	int buf_size = 64;
@@ -79,29 +78,40 @@ char **sh_parseline(char *line)
 int sh_execute(char **args)
 {
 	int i;
-	
+	char *a[] = {"exit", "env", NULL};
+
 	if (args[0] == NULL)
 		return (1);
-	for (i = 0; args[i] != NULL; i++)
+	for (i = 0; a[i] != NULL; i++)
 	{
-	       	if (_strcmp(args[i]) == 1)
-			return (0);
-	} 
-	 return (sh_start(args));
+		if (_strcmp(args[0], a[i]) == 1)
+		{
+			if (i == 1)
+				return (_environ());
+			else
+				return (0);
+		}
+	}
+	return (sh_start(args));
 }
 /**
  * _strcmp - function compares string argument with 'exit'
- *@ptr: Argument pointer
+ *@arg: Argument1 pointer
+ *@built: Builtin argument pointer
  *
  * Return: flag
  */
-int _strcmp(char *ptr)
+int _strcmp(char *arg, char *built)
 {
-	char *a = "exit";
-	int i, flag = 1;
+	int flag;
 
-	for (i = 0; ptr[i] != '\0' && a[i] != '\0'; i++)
-		if (ptr[i] != a[i])
-			flag *= 0;
+	while (*built && (*built == *arg))
+	{
+		flag = 1;
+		built++;
+		arg++;
+	}
+	if (*built || *arg)
+		flag = 0;
 	return (flag);
 }
