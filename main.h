@@ -7,6 +7,9 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+
+extern char **environ;
+
 void sh_loop(void);
 char *path_finder(char *args);
 char *buf(char *path, char *args);
@@ -14,6 +17,7 @@ int sh_start(char **args);
 char *sh_readline(void);
 char **sh_parseline(char *line);
 int sh_execute(char **args);
-int _strcmp(char *ptr);
+int _strcmp(char *arg, char *built);
+int _environ(void);
 
-#endif
+#endif /* MAIN_H */

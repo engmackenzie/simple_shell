@@ -114,5 +114,6 @@ int sh_start(char **args)
 int main(void)
 {
 	sh_loop();
+
 	return (EXIT_SUCCESS);
 }
