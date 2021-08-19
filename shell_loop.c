@@ -82,7 +82,7 @@ int sh_execute(char **args)
 	char *a[] = {"exit", "env", NULL};
 
 	if (args[0] == NULL)
-		return (1); 		/* should we ret 1? yes */
+		return (1);
 	for (i = 0; a[i] != NULL; i++)
 	{
 		if (_strcmp(args[0], a[i]) == 1)
