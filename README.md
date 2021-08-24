@@ -58,13 +58,27 @@ $
  - [x] 0. README, man, AUTHORS
  - [x] 1. Betty would be proud
  - [x] 2. Simple shell 0.1
- - [ ] 3. Simple shell 0.2
- - [ ] 4. Simple shell 0.3
- - [ ] 5. Simple shell 0.4
- - [ ] 6. Simple shell 1.0
- - [ ] 7. What happens when you type `ls -l \*.c` in the shell
+ - [x] 3. Simple shell 0.2
+ - [x] 4. Simple shell 0.3
+ - [x] 5. Simple shell 0.4
+ - [x] 6. Simple shell 1.0
+ - [x] 7. What happens when you type `ls -l \*.c` in the shell
 ## Advanced Tasks
- - [ ] 100. 
+ - [ ] 8. Test suite
+ - [ ] 9. Simple shell 0.1.1
+ - [ ] 10. Simple shell 0.2.1
+ - [ ] 11. Simple shell 0.4.1
+ - [ ] 12. Simple shell 0.4.2
+ - [ ] 13. setenv, unsetenv
+ - [ ] 14. cd
+ - [ ] 15. ;
+ - [ ] 16. && and ||
+ - [ ] 17. alias
+ - [ ] 18. Variables
+ - [ ] 19. Comments
+ - [ ] 20. help
+ - [ ] 21. history
+ - [ ] 22. File as input 
 ## Bugs
 No known bugs exists within the program as of this writing.
 

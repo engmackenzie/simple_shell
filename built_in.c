@@ -10,5 +10,6 @@ int _environ(void)
 
 	for (; *en; en++)
 		printf("%s\n", *en);
+
 	return (1);
 }

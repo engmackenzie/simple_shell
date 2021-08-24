@@ -90,8 +90,9 @@ int sh_start(char **args)
 			if (execve(ptr, args, env_arg) == -1)
 			{
 				perror("./shell");
+				exit(EXIT_FAILURE); /* moved exit failure */
 			}
-		exit(EXIT_FAILURE);
+			sleep(1); /* used sleep instead of exit failure */
 		}
 		else if (pid < 0)
 			perror("./shell");
@@ -118,5 +119,6 @@ int sh_start(char **args)
 int main(void)
 {
 	sh_loop();
+
 	return (EXIT_SUCCESS);
 }

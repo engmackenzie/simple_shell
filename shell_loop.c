@@ -20,7 +20,7 @@ void sh_loop(void)
 	} while (state);
 }
 /**
- * sh_readline - function read liens the shell arguments
+ * sh_readline - reads user input from stdin
  *
  * Return: pointer to the arguments entered
  */
@@ -30,10 +30,11 @@ char *sh_readline(void)
 	size_t n = 0;
 
 	if (getline(&line, &n, stdin) == -1)
-		exit(EXIT_SUCCESS);
+		feof(stdin) ?  exit(EXIT_SUCCESS) : exit(EXIT_FAILURE);
+
 	return (line);
 }
-#define DELIM " \t\r\n\a"
+#define DELIM " \t\r\n\a" /* \r and \a are rarely used esp. \a */
 /**
  * sh_parseline - fuction eliminates spaces and delimeters in arguments
  * @line: argument pointer
