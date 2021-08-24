@@ -14,6 +14,8 @@ int sh_start(char **args);
 char *sh_readline(void);
 char **sh_parseline(char *line);
 int sh_execute(char **args);
-int _strcmp(char *ptr);
+int _strcmp(char *arg, char *built);
+extern char **environ;
+int _environ(void);
 
 #endif
