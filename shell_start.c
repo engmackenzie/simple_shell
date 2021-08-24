@@ -33,6 +33,7 @@ char *path_finder(char *args)
 			{
 				return (bufptr);
 			}
+			free(bufptr);
 		}
 		i++;
 	}
@@ -52,7 +53,6 @@ char *buf(char *path, char *args)
 
 	if (_buf == NULL)
 		return (NULL);
-
 	for (i = 0; path[i] != '\0'; i++)
 	{
 		_buf[i] = path[i];
@@ -75,10 +75,13 @@ char *buf(char *path, char *args)
 int sh_start(char **args)
 {
 	pid_t pid, wpid;
-	int status;
+	int status, flag = 0;
 	char *env_arg[] = {(char *)0};
-	char *ptr = path_finder(args[0]);
+	char *ptr = NULL;
 
+	if (access(args[0], X_OK) == 0)
+		flag = 1;
+	ptr = path_finder(args[0]);
 	if (ptr)
 	{
 		pid = fork();
@@ -103,6 +106,8 @@ int sh_start(char **args)
 	}
 	else
 		perror("./shell");
+	if (flag == 0)
+		free(ptr);
 	return (1);
 }
 /**
