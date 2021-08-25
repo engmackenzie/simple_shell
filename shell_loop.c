@@ -11,7 +11,8 @@ void sh_loop(void)
 	int state;
 
 	do {
-		printf("$ ");
+		_putchar('$');
+		_putchar(' ');
 		line = sh_readline();
 		args = sh_parseline(line);
 		state = sh_execute(args);
@@ -29,9 +30,7 @@ char *sh_readline(void)
 	char *line = NULL;
 	size_t n = 0;
 
-	if (getline(&line, &n, stdin) == -1)
-		feof(stdin) ?  exit(EXIT_SUCCESS) : exit(EXIT_FAILURE);
-
+	getline(&line, &n, stdin);
 	return (line);
 }
 #define DELIM " \t\r\n\a" /* \r and \a are rarely used esp. \a */

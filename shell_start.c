@@ -92,7 +92,6 @@ int sh_start(char **args)
 				perror("./shell");
 				exit(EXIT_FAILURE); /* moved exit failure */
 			}
-			sleep(1); /* used sleep instead of exit failure */
 		}
 		else if (pid < 0)
 			perror("./shell");

@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+int _putchar(char c);
 extern char **environ;
 void sh_loop(void);
 char *path_finder(char *args);
