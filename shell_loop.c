@@ -30,7 +30,8 @@ char *sh_readline(void)
 	char *line = NULL;
 	size_t n = 0;
 
-	getline(&line, &n, stdin);
+	if (getline(&line, &n, stdin) == -1)
+		exit(EXIT_FAILURE);
 	return (line);
 }
 #define DELIM " \t\r\n\a" /* \r and \a are rarely used esp. \a */
